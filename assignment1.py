@@ -61,7 +61,8 @@ def main():
     print("Album Tracker 1.0 - by Roswaal Mathers")
     with open("albums.csv", "r") as albums:
         print(len(albums.readlines()), "albums loaded")
-    while True:
+    choice = ""
+    while choice != "Q" and choice != "q":
         print("Menu:\nL - List all albums\nA - Add new album\nM - Mark an album as completed\nQ - Quit")
         choice = input(">>> ")
         if choice == "L" or choice == "l":
@@ -97,7 +98,6 @@ def main():
         elif choice == "Q" or choice == "q":
             with open("albums.csv", "r") as albums:
                 print(len(albums.readlines()), " albums saved to albums.csv")
-            break
         else:
             print("Invalid menu choice")
 
